@@ -18,7 +18,7 @@ parser.add_argument("-p", "--path", help="directory location, if this is not pro
 parser.add_argument("-g", "--includegit", action="store_true", help="Includes .git/ folder in the search scope, disabled by default")
 args = parser.parse_args()
 
-print ('IMPORTANT: This script is going to use the filesystem.\n'
+print('IMPORTANT: This script is going to use the filesystem.\n'
         'Do not change any files in the directory while the script is running, have a coffee or '
         'something.\n')
 if not args.force:
@@ -40,12 +40,12 @@ if args.extensions:
 else:
     allowed_extensions = DEFAULT_EXTENSIONS
 
-print 'Allowed extensions: %s' %  reduce(lambda x,y: x+', '+y, allowed_extensions)
+print('Allowed extensions: %s' %  reduce(lambda x,y: x+', '+y, allowed_extensions))
 
 if ignore_path:
-    print 'Using ignore file %s\n' % ignore_path
+    print('Using ignore file %s\n' % ignore_path)
 else:
-    print '\n'
+    print('\n')
 
 #Create an instance of folder checker,
 #this class will list files in all subdirectories,
@@ -60,4 +60,4 @@ file_traverser = fc.file_traverser()
 
 for result in file_traverser:
     if result.result_type in results_to_print:
-        print result
+        print(result)
