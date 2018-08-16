@@ -43,9 +43,9 @@ else:
 print 'Allowed extensions: %s' %  reduce(lambda x,y: x+', '+y, allowed_extensions)
 
 if ignore_path:
-    print 'Using ignore file %s\n' % ignore_path
+    print('Using ignore file %s\n' % ignore_path)
 else:
-    print '\n'
+    print('\n')
 
 #Create an instance of folder checker,
 #this class will list files in all subdirectories,
@@ -60,4 +60,4 @@ file_traverser = fc.file_traverser()
 
 for result in file_traverser:
     if result.result_type in results_to_print:
-        print result
+        print(result)
